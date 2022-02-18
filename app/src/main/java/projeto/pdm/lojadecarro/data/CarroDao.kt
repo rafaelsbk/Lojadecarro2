@@ -6,10 +6,10 @@ import androidx.room.*
 @Dao
 interface CarroDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun addCarro (carro: Carro)
+    suspend fun addCarro (carro: kotlin.collections.List<projeto.pdm.lojadecarro.data.Carro>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertRemote(estado: List<Carro>)
+    fun insertRemote(carro: List<Carro>)
 
     @Query("SELECT * FROM carro_tbl ORDER BY id ASC")
     fun getAllCarros(): LiveData<List<Carro>>

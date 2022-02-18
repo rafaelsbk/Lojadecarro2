@@ -18,14 +18,12 @@ class CarroViewModel(application: Application): AndroidViewModel(application) {
     }
 
     fun addCar(carro: Carro){
-        viewModelScope.launch(Dispatchers.IO){
-            repository.addCarro(carro)
-        }
+
     }
 
-    fun addEstadoRemote(estado: List<Carro>) {
+    fun addCarroRemote(carro: List<Carro>) {
         viewModelScope.launch(Dispatchers.IO) {
-            repository.addEstadoRemote(estado)
+            repository.addCarro(carro)
         }
     }
 

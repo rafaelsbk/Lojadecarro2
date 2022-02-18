@@ -7,12 +7,12 @@ class CarroRepo(private val carroDao: CarroDao) {
 
     val readAllData: LiveData<List<Carro>> = carroDao.getAllCarros()
 
-    suspend fun addCarro(carro: Carro){
+    suspend fun addCarro(carro: List<Carro>){
         carroDao.addCarro(carro)
     }
 
-    suspend fun addEstadoRemote (estado: List<Carro>){
-        carroDao.insertRemote(estado)
+    suspend fun addCarroRemote (carro: List<Carro>){
+        carroDao.insertRemote(carro)
     }
 
     suspend fun updateCarro(carro: Carro){
