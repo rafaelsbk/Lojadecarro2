@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mynay"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="projeto.pdm.lojadecarro.fragment.list.HomeFragment"
+        android:label="Lista dos Carros"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_addCarro"
+            app:destination="@id/addCarro" />
+        <action
+            android:id="@+id/action_homeFragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_sobre"
+            app:destination="@id/sobre" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCarro"
+        android:name="projeto.pdm.lojadecarro.fragment.add.AddCarFragment"
+        android:label="Cadastrar Carro"
+        tools:layout="@layout/fragment_addcarro" >
+        <action
+            android:id="@+id/action_addCarro_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="projeto.pdm.lojadecarro.fragment.update.updateFragment"
+        android:label="Editar Carro"
+        tools:layout="@layout/fragment_update" >
+        <action
+            android:id="@+id/action_updateFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="currentCar"
+            app:argType="projeto.pdm.lojadecarro.data.Carro" />
+    </fragment>
+    <fragment
+        android:id="@+id/sobre"
+        android:name="projeto.pdm.lojadecarro.fragment.SobreFragment"
+        android:label="fragment_sobre"
+        tools:layout="@layout/fragment_sobre" >
+        <action
+            android:id="@+id/action_sobre_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
