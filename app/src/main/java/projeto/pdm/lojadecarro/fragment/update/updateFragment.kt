@@ -35,7 +35,7 @@ class updateFragment : Fragment() {
         view.editModelo.setText(args.currentCar.modelo)
         view.editAno.setText(args.currentCar.ano.toString())
         view.editCor.setText(args.currentCar.cor)
-        view.editTipo.setText(args.currentCar.tipoCar)
+        view.editTipo.setText(args.currentCar.tipo_car)
 
         view.editbtn.setOnClickListener {
         editarCarro()

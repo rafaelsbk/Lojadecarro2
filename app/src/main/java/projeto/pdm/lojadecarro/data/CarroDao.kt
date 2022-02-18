@@ -8,6 +8,9 @@ interface CarroDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addCarro (carro: Carro)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertRemote(estado: List<Carro>)
+
     @Query("SELECT * FROM carro_tbl ORDER BY id ASC")
     fun getAllCarros(): LiveData<List<Carro>>
 

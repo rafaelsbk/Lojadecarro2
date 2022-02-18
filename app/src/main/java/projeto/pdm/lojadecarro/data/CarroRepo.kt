@@ -11,6 +11,10 @@ class CarroRepo(private val carroDao: CarroDao) {
         carroDao.addCarro(carro)
     }
 
+    suspend fun addEstadoRemote (estado: List<Carro>){
+        carroDao.insertRemote(estado)
+    }
+
     suspend fun updateCarro(carro: Carro){
         carroDao.updateCarro(carro)
     }
